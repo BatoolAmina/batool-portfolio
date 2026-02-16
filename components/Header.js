@@ -34,7 +34,7 @@ const Header = () => {
 
   const handleResumeDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/18rEIBogK94S83xxvoinmGT_KByn3Mop-/view?usp=sharing",
+      "https://drive.google.com/file/d/16YkCv8Y-9whBMJIiYWQXC5iFe_nXOOCC/view?usp=sharing",
       "_blank"
     );
   };
