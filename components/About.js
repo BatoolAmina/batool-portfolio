@@ -6,11 +6,8 @@ import AnimatedSection from "./AnimatedSection";
 
 const About = () => {
   const handleOpenResume = () => {
-    const fileId = "16YkCv8Y-9whBMJIiYWQXC5iFe_nXOOCC";
-    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-    
     const link = document.createElement("a");
-    link.href = downloadUrl;
+    link.href = "/Resume.pdf";
     link.setAttribute("download", "Batool_Amina_Resume.pdf");
     document.body.appendChild(link);
     link.click();
