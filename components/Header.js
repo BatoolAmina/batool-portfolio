@@ -33,12 +33,9 @@ const Header = () => {
   };
 
   const handleResumeDownload = () => {
-    const fileId = "16YkCv8Y-9whBMJIiYWQXC5iFe_nXOOCC";
-    const downloadLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
-    
     const link = document.createElement("a");
-    link.href = downloadLink;
-    link.setAttribute("download", "Batool_Amina_Resume.pdf");
+    link.href = "/Resume.pdf";
+    link.download = "Batool_Amina_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -122,7 +119,7 @@ const Header = () => {
               onClick={handleResumeDownload}
               className="w-full bg-gray-900 text-white py-4 rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex justify-center items-center gap-2 shadow-lg"
             >
-              Download CV <Download size={16} />
+              Download Resume <Download size={16} />
             </button>
           </motion.nav>
         )}
