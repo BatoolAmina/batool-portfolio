@@ -6,10 +6,15 @@ import AnimatedSection from "./AnimatedSection";
 
 const About = () => {
   const handleOpenResume = () => {
-    window.open(
-      "https://drive.google.com/file/d/16YkCv8Y-9whBMJIiYWQXC5iFe_nXOOCC/view?usp=sharing",
-      "_blank"
-    );
+    const fileId = "16YkCv8Y-9whBMJIiYWQXC5iFe_nXOOCC";
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.setAttribute("download", "Batool_Amina_Resume.pdf");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const containerVariants = {
