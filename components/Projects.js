@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Code, Terminal, BrainCircuit } from 'lucide-react';
+import { ArrowUpRight, Code, Terminal, BrainCircuit, Github, ExternalLink, Database } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const Projects = () => {
@@ -12,58 +12,61 @@ const Projects = () => {
     { 
       title: 'LUMINA 1.0', 
       desc: 'Full-stack AI platform integrating models for content, code, and image generation with secure JWT/OAuth.', 
-      tech: 'Next.js / Node.js / AI APIs', 
+      tech: 'Next.js / Node.js / Express / MongoDB', 
       cat: 'Full-Stack', 
-      link: '#' 
+      live: 'https://lumina-chatbot-app-by-batool.vercel.app/',
+      frontend: 'https://github.com/BatoolAmina/lumina-frontend',
+      backend: 'https://github.com/BatoolAmina/lumina-backend'
     },
     { 
       title: 'MHC AI', 
-      desc: 'Mental health classifier using BERT, ROBERTa, and Bi-LSTM for semantic and emotional analysis.', 
-      tech: 'Next.js / Flask / Hugging Face', 
+      desc: 'Mental health classifier using BERT, RoBERTa, and Bi-LSTM for enhanced semantic and emotional understanding.', 
+      tech: 'Next.js / Flask / Hugging Face / NLP', 
       cat: 'AI/ML', 
-      link: '#' 
+      live: 'https://mental-health-chatbot-app.vercel.app/',
+      frontend: 'https://github.com/BatoolAmina/mental_health_frontend',
+      backend: 'https://github.com/BatoolAmina/mental-health-backend'
     },
     { 
       title: 'SilverConnect', 
-      desc: 'A community-centric platform designed for engagement and connectivity for senior citizens.', 
-      tech: 'MERN Stack', 
+      desc: 'Full-stack platform enabling elderly users to connect with verified helpers for daily assistance.', 
+      tech: 'Next.js / Node.js / Express.js / MongoDB', 
       cat: 'Full-Stack', 
-      link: 'https://silver-connection.vercel.app/' 
+      live: 'https://silver-connection.vercel.app/',
+      frontend: 'https://github.com/BatoolAmina/silver-connect',
+      backend: 'https://github.com/BatoolAmina/silver-connect-backend'
     },
     { 
       title: 'Plagiarism Checker', 
       desc: 'Multi-format document analysis (.pdf, .docx, .txt) with interactive similarity highlighting.', 
-      tech: 'Python / NLP', 
+      tech: 'Python / NLP / Flask', 
       cat: 'Python', 
-      link: 'https://github.com/BatoolAmina/PlagiarismCheck' 
+      live: 'https://plagiarismcheck.streamlit.app/',
+      frontend: 'https://github.com/BatoolAmina/PlagiarismCheck'
     },
     { 
       title: 'Bandhu Enterprises', 
-      desc: 'Social impact project providing digital infrastructure for community-based services.', 
-      tech: 'Next.js / Tailwind', 
+      desc: 'Professional business website with a modern UI and optimized cross-device compatibility.', 
+      tech: 'React.js / TailwindCSS', 
       cat: 'Web Dev', 
-      link: 'https://bandhu-enterprises.vercel.app' 
-    },
-    { 
-      title: 'Pet-Friendly City', 
-      desc: 'A web app to help pet owners find friendly places in their urban areas.', 
-      tech: 'React / CSS', 
-      cat: 'Web Dev', 
-      link: 'https://batoolamina.github.io/Pet-Friendly-City/' 
+      live: 'https://bandhuenterprises.in',
+      frontend: 'https://github.com/BatoolAmina/bandhu-enterprises'
     },
     { 
       title: 'Hidden Hiring Gems', 
       desc: 'A curated job board for under-the-radar and niche career opportunities.', 
-      tech: 'JavaScript', 
+      tech: 'JavaScript / HTML / CSS', 
       cat: 'Web Dev', 
-      link: 'https://batoolamina.github.io/Hidden-Hiring-Gems/' 
+      live: 'https://batoolamina.github.io/Hidden-Hiring-Gems/',
+      frontend: 'https://github.com/BatoolAmina/Hidden-Hiring-Gems/'
     },
     { 
-      title: 'JavaScript Music Player', 
+      title: 'JS Music Player', 
       desc: 'Modern music player built with vanilla JavaScript and the Web Audio API.', 
-      tech: 'JS / Audio API', 
+      tech: 'JS / Web Audio API', 
       cat: 'Web Dev', 
-      link: 'https://batoolamina.github.io/CodeAlpha_Music-player-using-JavaScript/' 
+      live: 'https://batoolamina.github.io/Drum-Kit/',
+      frontend: 'https://github.com/BatoolAmina/Drum-Kit'
     }
   ];
 
@@ -115,7 +118,26 @@ const Projects = () => {
                   <h3 className="text-lg font-[Inter] font-bold text-gray-900 mb-2 tracking-tight group-hover:text-[#2d7a2d] transition-colors uppercase">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-xs leading-relaxed line-clamp-2 px-1">{project.desc}</p>
+                  <p className="text-gray-600 text-xs leading-relaxed line-clamp-2 px-1 mb-4">{project.desc}</p>
+                  
+                  {/* Action Links */}
+                  <div className="flex gap-3 mt-2">
+                    {project.frontend && (
+                      <a href={project.frontend} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-50 rounded-lg text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all" title="Frontend Repo">
+                        <Github size={16} />
+                      </a>
+                    )}
+                    {project.backend && (
+                      <a href={project.backend} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-50 rounded-lg text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all" title="Backend Repo">
+                        <Database size={16} />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-50 rounded-lg text-gray-400 hover:text-[#4caf50] hover:bg-[#f0f7f0] transition-all" title="Live Site">
+                        <ExternalLink size={16} />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
                 <div className="w-full mt-auto pt-4 border-t border-gray-50 flex flex-row items-center justify-between">
@@ -124,7 +146,7 @@ const Projects = () => {
                     <span className="text-[9px] font-black text-[#66bb6a] uppercase tracking-wider">{project.tech}</span>
                   </div>
                   <motion.a 
-                    href={project.link} target="_blank"
+                    href={project.live} target="_blank"
                     whileHover={{ scale: 1.1, rotate: 10, backgroundColor: "#1b5e20" }}
                     whileTap={{ scale: 0.9 }}
                     className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-md transition-all"
