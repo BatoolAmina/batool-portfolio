@@ -59,14 +59,6 @@ const Projects = () => {
       cat: 'Web Dev', 
       live: 'https://batoolamina.github.io/Hidden-Hiring-Gems/',
       frontend: 'https://github.com/BatoolAmina/Hidden-Hiring-Gems/'
-    },
-    { 
-      title: 'JS Music Player', 
-      desc: 'Modern music player built with vanilla JavaScript and the Web Audio API.', 
-      tech: 'JS / Web Audio API', 
-      cat: 'Web Dev', 
-      live: 'https://batoolamina.github.io/Drum-Kit/',
-      frontend: 'https://github.com/BatoolAmina/Drum-Kit'
     }
   ];
 
