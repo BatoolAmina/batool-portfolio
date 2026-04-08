@@ -1,22 +1,70 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Code, Terminal } from 'lucide-react';
+import { ArrowUpRight, Code, Terminal, BrainCircuit } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
-  const categories = ['All', 'Full-Stack', 'Python', 'Web Dev'];
+  const categories = ['All', 'Full-Stack', 'AI/ML', 'Web Dev', 'Python'];
 
   const projects = [
-    { title: 'Plagiarism Checker', desc: 'Multi-format document analysis (.pdf, .docx, .txt) with interactive similarity highlighting.', tech: 'Python / NLP', cat: 'Python', link: 'https://github.com/BatoolAmina/PlagiarismCheck' },
-    { title: 'SilverConnect', desc: 'A community-centric platform designed for engagement and connectivity for senior citizens.', tech: 'MERN Stack', cat: 'Full-Stack', link: 'https://silver-connection.vercel.app/' },
-    { title: 'Bandhu Enterprises', desc: 'Social impact project providing digital infrastructure for community-based services.', tech: 'Next.js / Tailwind', cat: 'Web Dev', link: 'https://bandhu-enterprises.vercel.app' },
-    { title: 'Pet-Friendly City', desc: 'A web app to help pet owners find friendly places in their urban areas.', tech: 'React / CSS', cat: 'Web Dev', link: 'https://batoolamina.github.io/Pet-Friendly-City/' },
-    { title: 'Hidden Hiring Gems', desc: 'A curated job board for under-the-radar and niche career opportunities.', tech: 'JavaScript', cat: 'Web Dev', link: 'https://batoolamina.github.io/Hidden-Hiring-Gems/' },
-    { title: 'CollegeTips.in Photo Gallery', desc: 'Professional photo gallery and resource website optimized for student UI experience.', tech: 'Frontend', cat: 'Web Dev', link: 'https://batoolamina.github.io/CollegeTips.in/' },
-    { title: 'JavaScript Music Player', desc: 'Modern music player built with vanilla JavaScript and the Web Audio API.', tech: 'JS / Audio API', cat: 'Web Dev', link: 'https://batoolamina.github.io/CodeAlpha_Music-player-using-JavaScript/' },
-    { title: 'PyPassword Generator', desc: 'A secure, random password generator using Python logic.', tech: 'Python', cat: 'Python', link: 'https://github.com/BatoolAmina/CODSOFT/blob/main/PasswordGenerator.py' }
+    { 
+      title: 'LUMINA 1.0', 
+      desc: 'Full-stack AI platform integrating models for content, code, and image generation with secure JWT/OAuth.', 
+      tech: 'Next.js / Node.js / AI APIs', 
+      cat: 'Full-Stack', 
+      link: '#' 
+    },
+    { 
+      title: 'MHC AI', 
+      desc: 'Mental health classifier using BERT, ROBERTa, and Bi-LSTM for semantic and emotional analysis.', 
+      tech: 'Next.js / Flask / Hugging Face', 
+      cat: 'AI/ML', 
+      link: '#' 
+    },
+    { 
+      title: 'SilverConnect', 
+      desc: 'A community-centric platform designed for engagement and connectivity for senior citizens.', 
+      tech: 'MERN Stack', 
+      cat: 'Full-Stack', 
+      link: 'https://silver-connection.vercel.app/' 
+    },
+    { 
+      title: 'Plagiarism Checker', 
+      desc: 'Multi-format document analysis (.pdf, .docx, .txt) with interactive similarity highlighting.', 
+      tech: 'Python / NLP', 
+      cat: 'Python', 
+      link: 'https://github.com/BatoolAmina/PlagiarismCheck' 
+    },
+    { 
+      title: 'Bandhu Enterprises', 
+      desc: 'Social impact project providing digital infrastructure for community-based services.', 
+      tech: 'Next.js / Tailwind', 
+      cat: 'Web Dev', 
+      link: 'https://bandhu-enterprises.vercel.app' 
+    },
+    { 
+      title: 'Pet-Friendly City', 
+      desc: 'A web app to help pet owners find friendly places in their urban areas.', 
+      tech: 'React / CSS', 
+      cat: 'Web Dev', 
+      link: 'https://batoolamina.github.io/Pet-Friendly-City/' 
+    },
+    { 
+      title: 'Hidden Hiring Gems', 
+      desc: 'A curated job board for under-the-radar and niche career opportunities.', 
+      tech: 'JavaScript', 
+      cat: 'Web Dev', 
+      link: 'https://batoolamina.github.io/Hidden-Hiring-Gems/' 
+    },
+    { 
+      title: 'JavaScript Music Player', 
+      desc: 'Modern music player built with vanilla JavaScript and the Web Audio API.', 
+      tech: 'JS / Audio API', 
+      cat: 'Web Dev', 
+      link: 'https://batoolamina.github.io/CodeAlpha_Music-player-using-JavaScript/' 
+    }
   ];
 
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.cat === filter);
@@ -60,7 +108,7 @@ const Projects = () => {
                 <div className="flex flex-col items-center w-full mb-4">
                   <div className="relative mb-4">
                     <div className="p-3.5 bg-[#f7faf7] text-[#4caf50] rounded-xl group-hover:bg-[#4caf50] group-hover:text-white transition-all duration-300 shadow-sm group-hover:rotate-6">
-                      {project.cat === 'Python' ? <Terminal size={22} /> : <Code size={22} />}
+                      {project.cat === 'AI/ML' ? <BrainCircuit size={22} /> : project.cat === 'Python' ? <Terminal size={22} /> : <Code size={22} />}
                     </div>
                     <span className="absolute -top-1 -right-6 text-[8px] font-black text-gray-300 uppercase">/0{index + 1}</span>
                   </div>
