@@ -35,7 +35,7 @@ const Header = () => {
   const handleResumeDownload = () => {
     const link = document.createElement("a");
     link.href = "/Resume.pdf";
-    link.download = "Batool_Amina_Resume.pdf";
+    link.download = "Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
