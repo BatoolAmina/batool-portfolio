@@ -1,17 +1,12 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Download, GraduationCap, Trophy } from "lucide-react";
+import { ExternalLink, GraduationCap, Trophy } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const About = () => {
   const handleOpenResume = () => {
-    const link = document.createElement("a");
-    link.href = "/Resume.pdf";
-    link.setAttribute("download", "Batool_Amina_Resume.pdf");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open("/Resume.pdf", "_blank", "noopener,noreferrer");
   };
 
   const containerVariants = {
@@ -57,7 +52,7 @@ const About = () => {
                 draggable={false}
               />
               <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md px-8 py-4 rounded-2xl border border-gray-100 shadow-sm">
-                <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-[#2d7a2d]">B.Tech Scholar</p>
+                <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-[#2d7a2d]">B.Tech Graduate</p>
               </div>
             </div>
           </motion.div>
@@ -80,7 +75,7 @@ const About = () => {
             </motion.div>
 
             <motion.p variants={itemVariants} className="text-gray-500 text-xl leading-relaxed max-w-xl font-normal">
-              Final-year Computer Science student at Integral University with an 82% aggregate. Dedicated to building high-performance MERN stack applications that prioritize user experience and scalable logic.
+              Computer Science graduate from Integral University with an 82% aggregate. Dedicated to building high-performance MERN stack applications that prioritize user experience and scalable logic.
             </motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -113,7 +108,7 @@ const About = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="relative z-10 flex items-center gap-4">
-                  View Full Resume <Download size={20} />
+                  View Full Resume <ExternalLink size={20} />
                 </span>
                 <motion.div 
                   className="absolute inset-0 bg-[#2d7a2d]"
